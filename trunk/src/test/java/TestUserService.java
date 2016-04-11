@@ -28,7 +28,7 @@ public class TestUserService {
 	@Autowired
 	private TUserLoginService tUserLoginService;
 
-	@Test
+	//@Test
 	public void testInsert() {
 		TUserLoginExample e = new TUserLoginExample();
 		e.createCriteria().andUsernameEqualTo("U_" + -1);
@@ -51,6 +51,12 @@ public class TestUserService {
 		Assert.assertTrue(pi.getTotal() > 0);
 	}
 	@Test
+	public void testQueryPage2() {
+		PageInfo<TUserLogin> pi = tUserLoginService.selectByExample(null, 3, 10);
+		LOGGER.info("PageInfo:" + pi.toString());
+		Assert.assertTrue(pi.getTotal() > 0);
+	}
+	//@Test
 	public void testSelectOne() {
 		TUserLoginExample e = new TUserLoginExample();
 		e.createCriteria().andUsernameEqualTo("U_" + -1);
@@ -58,13 +64,12 @@ public class TestUserService {
 		LOGGER.info("XXX:" + t.getUsername());
 		Assert.assertTrue(t != null);
 	}
-	@Test
+	//@Test
 	public void testDelete() {
 		TUserLoginExample e = new TUserLoginExample();
 		e.createCriteria().andUsernameEqualTo("U_" + -1);
 		int result = tUserLoginService.deleteByExample(e);
 		Assert.assertTrue(result == 1);
 	}
-
 
 }

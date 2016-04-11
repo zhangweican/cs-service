@@ -39,15 +39,6 @@ public class TUserLogin {
      */
     private Date loginDate;
 
-    /**<br/>
-     * 字段: t_user_login.big<br/>
-     * 可空: true<br/>
-     * 缺省: <br/>
-     * 长度: 65535<br/>
-     * 说明: 大字段
-     */
-    private byte[] big;
-
     /**
      * @return t_user_login.id: ID逐渐
      */
@@ -118,23 +109,5 @@ public class TUserLogin {
      */
     public void setLoginDate(Date loginDate) {
         this.loginDate = loginDate;
-    }
-
-    /**
-     * @return t_user_login.big: 大字段
-     */
-    public byte[] getBig() {
-        return big;
-    }
-
-    /**<br/>
-     * 字段: t_user_login.big<br/>
-     * 可空: true<br/>
-     * 缺省: <br/>
-     * 长度: 65535<br/>
-     * @param big: 大字段
-     */
-    public void setBig(byte[] big) {
-        this.big = big;
     }
 }

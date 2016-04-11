@@ -2,16 +2,7 @@ package com.leweiyou.service.mybatis.entry;
 
 import java.util.Date;
 
-public class TUserCopy {
-    /**<br/>
-     * 字段: t_user_copy.id<br/>
-     * 可空: false<br/>
-     * 缺省: <br/>
-     * 长度: 19<br/>
-     * 说明: ID逐渐
-     */
-    private Long id;
-
+public class TUserCopy extends TUserCopyKey {
     /**<br/>
      * 字段: t_user_copy.username<br/>
      * 可空: false<br/>
@@ -47,24 +38,6 @@ public class TUserCopy {
      * 说明: 大字段
      */
     private byte[] big;
-
-    /**
-     * @return t_user_copy.id: ID逐渐
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**<br/>
-     * 字段: t_user_copy.id<br/>
-     * 可空: false<br/>
-     * 缺省: <br/>
-     * 长度: 19<br/>
-     * @param id: ID逐渐
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     /**
      * @return t_user_copy.username: 用户名

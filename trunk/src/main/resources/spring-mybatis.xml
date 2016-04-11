@@ -90,6 +90,7 @@
 			<tx:method name="del*" 		propagation="REQUIRED"/>
 			<tx:method name="recover*" 	propagation="REQUIRED"/>
 			<tx:method name="sync*" 	propagation="REQUIRED"/>
+			<tx:method name="batch*" 	propagation="REQUIRED"/>
 			<tx:method name="*" 		propagation="SUPPORTS" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>

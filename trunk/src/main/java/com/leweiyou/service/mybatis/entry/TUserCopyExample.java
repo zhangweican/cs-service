@@ -195,63 +195,123 @@ public class TUserCopyExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andIdIsNull() {
-            addCriterion("id is null");
+        public Criteria andId2IsNull() {
+            addCriterion("id2 is null");
             return (Criteria) this;
         }
 
-        public Criteria andIdIsNotNull() {
-            addCriterion("id is not null");
+        public Criteria andId2IsNotNull() {
+            addCriterion("id2 is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Long value) {
-            addCriterion("id =", value, "id");
+        public Criteria andId2EqualTo(Long value) {
+            addCriterion("id2 =", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Long value) {
-            addCriterion("id <>", value, "id");
+        public Criteria andId2NotEqualTo(Long value) {
+            addCriterion("id2 <>", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Long value) {
-            addCriterion("id >", value, "id");
+        public Criteria andId2GreaterThan(Long value) {
+            addCriterion("id2 >", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("id >=", value, "id");
+        public Criteria andId2GreaterThanOrEqualTo(Long value) {
+            addCriterion("id2 >=", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Long value) {
-            addCriterion("id <", value, "id");
+        public Criteria andId2LessThan(Long value) {
+            addCriterion("id2 <", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Long value) {
-            addCriterion("id <=", value, "id");
+        public Criteria andId2LessThanOrEqualTo(Long value) {
+            addCriterion("id2 <=", value, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Long> values) {
-            addCriterion("id in", values, "id");
+        public Criteria andId2In(List<Long> values) {
+            addCriterion("id2 in", values, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Long> values) {
-            addCriterion("id not in", values, "id");
+        public Criteria andId2NotIn(List<Long> values) {
+            addCriterion("id2 not in", values, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Long value1, Long value2) {
-            addCriterion("id between", value1, value2, "id");
+        public Criteria andId2Between(Long value1, Long value2) {
+            addCriterion("id2 between", value1, value2, "id2");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Long value1, Long value2) {
-            addCriterion("id not between", value1, value2, "id");
+        public Criteria andId2NotBetween(Long value1, Long value2) {
+            addCriterion("id2 not between", value1, value2, "id2");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1IsNull() {
+            addCriterion("id1 is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1IsNotNull() {
+            addCriterion("id1 is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1EqualTo(Long value) {
+            addCriterion("id1 =", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1NotEqualTo(Long value) {
+            addCriterion("id1 <>", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1GreaterThan(Long value) {
+            addCriterion("id1 >", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1GreaterThanOrEqualTo(Long value) {
+            addCriterion("id1 >=", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1LessThan(Long value) {
+            addCriterion("id1 <", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1LessThanOrEqualTo(Long value) {
+            addCriterion("id1 <=", value, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1In(List<Long> values) {
+            addCriterion("id1 in", values, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1NotIn(List<Long> values) {
+            addCriterion("id1 not in", values, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1Between(Long value1, Long value2) {
+            addCriterion("id1 between", value1, value2, "id1");
+            return (Criteria) this;
+        }
+
+        public Criteria andId1NotBetween(Long value1, Long value2) {
+            addCriterion("id1 not between", value1, value2, "id1");
             return (Criteria) this;
         }
 
