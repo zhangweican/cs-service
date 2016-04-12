@@ -1,4 +1,4 @@
-package com.leweiyou.service.service;
+package com.leweiyou.service.service.x;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -7,11 +7,10 @@ import org.springframework.cache.annotation.Cacheable;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.leweiyou.service.mybatis.dao.TUserLoginMapper;
 
 
-import com.leweiyou.service.mybatis.entry.TUserLogin;
-import com.leweiyou.service.mybatis.entry.TUserLoginExample;
+import com.leweiyou.service.mybatis.dao.x.*;
+import com.leweiyou.service.mybatis.entry.x.*;
 import com.leweiyou.service.util.Commons;
 
 import java.util.List;

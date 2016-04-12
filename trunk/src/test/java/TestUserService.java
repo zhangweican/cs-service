@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.leweiyou.service.mybatis.entry.TUserLogin;
-import com.leweiyou.service.mybatis.entry.TUserLoginExample;
-import com.leweiyou.service.service.TUserLoginService;
 import com.github.pagehelper.PageInfo;
+import com.leweiyou.service.mybatis.entry.x.TUserLogin;
+import com.leweiyou.service.mybatis.entry.x.TUserLoginExample;
+import com.leweiyou.service.service.x.TUserLoginService;
 
 /**
  * Junit test spring mybatis

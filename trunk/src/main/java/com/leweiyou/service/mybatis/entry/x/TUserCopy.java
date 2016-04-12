@@ -1,4 +1,4 @@
-package com.leweiyou.service.mybatis.entry;
+package com.leweiyou.service.mybatis.entry.x;
 
 import java.util.Date;
 

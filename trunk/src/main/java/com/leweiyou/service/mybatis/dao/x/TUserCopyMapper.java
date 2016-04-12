@@ -1,8 +1,8 @@
-package com.leweiyou.service.mybatis.dao;
+package com.leweiyou.service.mybatis.dao.x;
 
-import com.leweiyou.service.mybatis.entry.TUserCopy;
-import com.leweiyou.service.mybatis.entry.TUserCopyExample;
-import com.leweiyou.service.mybatis.entry.TUserCopyKey;
+import com.leweiyou.service.mybatis.entry.x.TUserCopy;
+import com.leweiyou.service.mybatis.entry.x.TUserCopyExample;
+import com.leweiyou.service.mybatis.entry.x.TUserCopyKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

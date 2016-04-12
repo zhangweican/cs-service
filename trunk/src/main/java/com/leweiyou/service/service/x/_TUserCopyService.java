@@ -1,4 +1,4 @@
-package com.leweiyou.service.service;
+package com.leweiyou.service.service.x;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
@@ -7,11 +7,10 @@ import org.springframework.cache.annotation.Cacheable;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.leweiyou.service.mybatis.dao.TUserCopyMapper;
 
 
-import com.leweiyou.service.mybatis.entry.TUserCopy;
-import com.leweiyou.service.mybatis.entry.TUserCopyExample;
+import com.leweiyou.service.mybatis.dao.x.*;
+import com.leweiyou.service.mybatis.entry.x.*;
 import com.leweiyou.service.util.Commons;
 
 import java.util.List;
@@ -69,7 +68,7 @@ public abstract class _TUserCopyService{
      * 通过主键删除记录
      */
     @CacheEvict(value = Commons.ID_Ehcache_Default,allEntries = true)
-	public int deleteByPrimaryKey(com.leweiyou.service.mybatis.entry.TUserCopyKey id) throws RuntimeException{
+	public int deleteByPrimaryKey(TUserCopyKey id) throws RuntimeException{
         return tUserCopyMapper.deleteByPrimaryKey(id);
     }
 
@@ -87,8 +86,8 @@ public abstract class _TUserCopyService{
      * 批量通过主键删除记录
      */
     @CacheEvict(value = Commons.ID_Ehcache_Default,allEntries = true)
-	public void batchDeleteByPrimaryKey(Set<com.leweiyou.service.mybatis.entry.TUserCopyKey> ids) throws RuntimeException{
-		for(com.leweiyou.service.mybatis.entry.TUserCopyKey id : ids){
+	public void batchDeleteByPrimaryKey(Set<TUserCopyKey> ids) throws RuntimeException{
+		for(TUserCopyKey id : ids){
 			tUserCopyMapper.deleteByPrimaryKey(id);
 		}
     }
@@ -160,7 +159,7 @@ public abstract class _TUserCopyService{
      * 通过主键查询记录
      */
     @Cacheable(value = Commons.ID_Ehcache_Default)
-	public TUserCopy selectByPrimaryKey(com.leweiyou.service.mybatis.entry.TUserCopyKey id) throws RuntimeException{
+	public TUserCopy selectByPrimaryKey(TUserCopyKey id) throws RuntimeException{
         return tUserCopyMapper.selectByPrimaryKey(id);
     }
 

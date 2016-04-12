@@ -1,4 +1,4 @@
-package com.leweiyou.service.service;
+package com.leweiyou.service.service.x;
 
 import org.springframework.stereotype.Component;
 

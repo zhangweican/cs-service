@@ -1,7 +1,7 @@
-package com.leweiyou.service.mybatis.dao;
+package com.leweiyou.service.mybatis.dao.x;
 
-import com.leweiyou.service.mybatis.entry.TUserLogin;
-import com.leweiyou.service.mybatis.entry.TUserLoginExample;
+import com.leweiyou.service.mybatis.entry.x.TUserLogin;
+import com.leweiyou.service.mybatis.entry.x.TUserLoginExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
