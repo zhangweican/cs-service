@@ -39,5 +39,7 @@
 	    <property name="cacheManager" ref="cacheManagerFactory" />
 	</bean>
 	
+	<!-- 通过定义Bean获取ApplicationContext -->
+	<bean id="springContextUtil" class="com.leweiyou.service.util.SpringContextUtil"/>
 	
 </beans>
