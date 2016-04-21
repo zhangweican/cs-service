@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+
+    <description>Leweiyou Tags</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>LeweiyouTags</short-name>
+    <uri>http://www.leweiyou.com/tags</uri>
+
+    
+    <tag>
+        <name>validError</name>  <!-- 为标签处理器类配一个标签名 -->
+        <tag-class>com.leweiyou.service.valid.ValidErrorTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute> 
+			<name>key</name>
+			<required>false</required>
+			<type>string</type> 
+		</attribute> 
+    </tag>
+</taglib>
