@@ -19,7 +19,7 @@
     <!--引入配置属性文件 -->
 	<!-- context:property-placeholder location="classpath:config.properties" /> -->
 	
-    <bean id="auditJmsProperties" class="com.leweiyou.service.dal.EnvPropertyPlaceholderConfigurer" init-method="init"/>  
+    <bean id="envPropertiesConfigurer" class="com.leweiyou.service.dal.EnvPropertyPlaceholderConfigurer" init-method="init"/>  
     
     <import resource="classpath*:spring-mybatis.xml"/>
     
