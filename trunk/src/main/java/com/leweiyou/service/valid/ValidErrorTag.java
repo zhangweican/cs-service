@@ -36,8 +36,11 @@ public class ValidErrorTag extends TagSupport {
 			JspWriter out = pageContext.getOut();
 			StringBuffer sb = new StringBuffer();
 			if(StringUtils.isNotEmpty(key)){
-				for(String value : e.get(key)){
-					sb.append(value).append("<br>");
+				Set<String> vals = e.get(key);
+				if(vals != null){
+					for(String value : vals){
+						sb.append(value).append("<br>");
+					}
 				}
 			}else{
 				for(Set<String> sets : e.values()){
