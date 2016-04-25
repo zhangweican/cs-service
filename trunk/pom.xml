@@ -12,6 +12,20 @@
 		<jackson.version>2.5.0</jackson.version>
 	</properties>
 
+	<distributionManagement>  
+        <repository>  
+            <id>releases</id>  
+            <name>User Project Release</name>  
+            <url>http://172.28.11.133:9070/nexus/content/repositories/releases</url>  
+        </repository>  
+  
+        <snapshotRepository>  
+            <id>snapshots</id>  
+            <name>User Project SNAPSHOTS</name>  
+            <url>http://172.28.11.133:9070/nexus/content/repositories/snapshots</url>  
+        </snapshotRepository>  
+	</distributionManagement> 
+
 	<dependencies>
 
 		<dependency>
@@ -246,9 +260,11 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+					<encoding>utf8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
