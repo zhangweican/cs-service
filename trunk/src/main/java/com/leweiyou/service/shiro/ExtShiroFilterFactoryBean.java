@@ -18,7 +18,7 @@ public class ExtShiroFilterFactoryBean extends ShiroFilterFactoryBean {
 		String isValid = EnvUtil.getValue("shiro.is.open.valid");
 		if(isValid != null && "false".equals(isValid.trim().toLowerCase())){
 			//不做任何处理，相当于没有配置校验规则
-			super.setFilterChainDefinitions("");
+			super.setFilterChainDefinitions("/**=anon");
 			return;
 		}
 		
