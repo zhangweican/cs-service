@@ -19,13 +19,13 @@
     <!--引入配置属性文件 -->
 	<!-- context:property-placeholder location="classpath:config.properties" /> -->
 	
-    <bean id="envPropertiesConfigurer" class="com.leweiyou.service.dal.EnvPropertyPlaceholderConfigurer" init-method="init"/>  
+    <bean id="envPropertiesConfigurer" class="com.leweiyou.framework.dal.EnvPropertyPlaceholderConfigurer" init-method="init"/>  
     
     <import resource="classpath*:spring-mybatis.xml"/>
     
 
 	<!--自动扫描含有@Service将其注入为bean -->
-	<context:component-scan base-package="com.leweiyou.service.valid,com.leweiyou.service.service" />
+	<context:component-scan base-package="com.leweiyou.framework.valid,com.leweiyou.framework.service" />
 	
 	<!-- 缓存配置 -->
 	<!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) -->
@@ -46,7 +46,7 @@
 	</bean>
 	
 	<!-- 通过定义Bean获取ApplicationContext -->
-	<bean id="springContextUtil" class="com.leweiyou.service.util.SpringContextUtil"/>
+	<bean id="springContextUtil" class="com.leweiyou.framework.util.SpringContextUtil"/>
 	
    	<!-- 定义校验 -->
     <!-- 以下 validator  ConversionService 在使用 mvc:annotation-driven 会 自动注册-->
@@ -57,7 +57,7 @@
     </bean>
 
     <!-- 国际化的消息资源文件（本系统中主要用于显示/错误消息定制） -->
-    <bean id="messageSource" class="com.leweiyou.service.i18n.MultipleMessageSource">
+    <bean id="messageSource" class="com.leweiyou.framework.i18n.MultipleMessageSource">
         <property name="basenames">
             <list>
                 <!-- 在web环境中一定要定位到classpath 否则默认到当前web应用下找  -->

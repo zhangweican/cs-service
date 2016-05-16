@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.leweiyou</groupId>
-	<artifactId>cs-service</artifactId>
+	<artifactId>cs-framework</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<url>http://www.leweiyou.com</url>
@@ -233,7 +233,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>cs-service</finalName>
+		<finalName>cs-framework</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
