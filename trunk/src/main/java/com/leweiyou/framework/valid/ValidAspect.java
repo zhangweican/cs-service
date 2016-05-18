@@ -33,7 +33,7 @@ public class ValidAspect {
 	@Autowired 
 	private Validator validator;
 	
-	@Around("@annotation(com.leweiyou.service.valid.Valid)")
+	@Around("@annotation(com.leweiyou.framework.valid.Valid)")
 	public Object doValid(ProceedingJoinPoint pjp) throws Throwable{
 		MethodSignature signature = (MethodSignature) pjp.getSignature();
 		Method method = signature.getMethod();
