@@ -21,7 +21,7 @@
 	
     <bean id="envPropertiesConfigurer" class="com.leweiyou.framework.dal.EnvPropertyPlaceholderConfigurer" init-method="init"/>  
     
-    <import resource="classpath*:spring-mybatis.xml"/>
+    <import resource="classpath*:spring-mybatis*.xml"/>
     
 
 	<!--自动扫描含有@Service将其注入为bean -->
