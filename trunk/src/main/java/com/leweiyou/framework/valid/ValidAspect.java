@@ -40,18 +40,13 @@ public class ValidAspect {
 		Object[] args = pjp.getArgs();
 
 		Valid valid = method.getAnnotation(Valid.class);
-		boolean isJs = method.isAnnotationPresent(ResponseBody.class);
+		
 		String validFunction = valid.validFunction();
-		String errorView = valid.errorView();
 		int parmPosion = valid.parameterPosition();
 		
 		if(StringUtils.isEmpty(validFunction)){
 			validFunction = ValidPrix + method.getName();
 			
-		}
-		
-		if(StringUtils.isEmpty(errorView)){
-			errorView = method.getAnnotation(RequestMapping.class).value()[0];
 		}
 		
 		//调用spring的Validation，进行字段的校验
@@ -65,7 +60,7 @@ public class ValidAspect {
 			for(FieldError error : br.getFieldErrors()){
 				map.addValidError(error.getField(), error.getDefaultMessage());
 			}
-			return setReturn(method,isJs,map,errorView);
+			return setReturn(method,map,valid);
 		}
 		
 		//扩展校验，反射进校验方法，继续校验
@@ -81,7 +76,7 @@ public class ValidAspect {
 		}
 		
 		if(map.isHaveError()){
-			return setReturn(method,isJs,map,errorView);
+			return setReturn(method,map,valid);
 		}
 		return pjp.proceed();
 	}
@@ -94,7 +89,15 @@ public class ValidAspect {
 	 * @param errorView
 	 * @return
 	 */
-	private Object setReturn(Method method,boolean isJs,ValidErrorEntity map,String errorView){
+	private Object setReturn(Method method,ValidErrorEntity map,Valid valid){
+		boolean isJs = method.isAnnotationPresent(ResponseBody.class);
+		String errorView = valid.errorView();
+		if(StringUtils.isEmpty(errorView)){
+			errorView = method.getAnnotation(RequestMapping.class).value()[0];
+		}
+		String jsonReturnPatten = valid.jsonReturnPatten();
+		
+		
 		Class returnClass = method.getReturnType();
 		if(isJs || returnClass == null){
 			boolean isError = false;
@@ -102,8 +105,12 @@ public class ValidAspect {
 			if(map.isHaveError()){
 				isError = true;
 			}
-			json += "," + JSONArray.toJSONString(map.all());
-			return "{isError:" + isError + json + "}";
+			json += JSONArray.toJSONString(map.all());
+			if(StringUtils.isNotEmpty(json)){
+				return jsonReturnPatten.replaceAll("#MSG#", json);
+			}else{
+				return jsonReturnPatten.replaceAll("#MSG#", "{}");
+			}
 		}else{
 			Object o = new Object();
 			try {

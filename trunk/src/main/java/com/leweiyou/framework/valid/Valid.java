@@ -34,4 +34,11 @@ public @interface Valid {
 	 * 暂时没有实现对多个字段校验的情况
 	 */
 	int parameterPosition() default 0;
+	
+	/**
+	 * 为了处理返回json时候，客户端需要对返回的错误结果进行处理，所以这里的格式需要定义一下
+	 * #MSG# 代表错误信息的集合
+	 * @return
+	 */
+	String jsonReturnPatten() default "{isError:true,msg:#MSG#}";
 }
