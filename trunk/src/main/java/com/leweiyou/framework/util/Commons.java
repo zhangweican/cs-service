@@ -3,8 +3,6 @@ package com.leweiyou.framework.util;
 public class Commons {
 	public static final String ID_Ehcache_Default = "baseCache";
 	
-	public final static String SessionAcount = "com.leweiyou.session.key";
-	
 	/**
 	 * 定义校验失败存入Request的map的兼职
 	 */
