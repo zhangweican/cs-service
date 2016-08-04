@@ -8,7 +8,7 @@
 	<url>http://www.leweiyou.com</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.3.0.RELEASE</spring.version>
+		<spring.version>4.1.0.RELEASE</spring.version>
 		<jackson.version>2.5.0</jackson.version>
 	</properties>
 
