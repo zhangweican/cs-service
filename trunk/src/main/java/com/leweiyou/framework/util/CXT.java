@@ -60,4 +60,13 @@ public class CXT {
 	public static Object getBean(String id){
 		return getApplicationContext().getBean(id);
 	}
+	
+	/**
+	 * 通过Class获取Bean
+	 * @param id
+	 * @return
+	 */
+	public static Object getBean(Class<?> clazz){
+		return getApplicationContext().getBean(clazz);
+	}
 }
