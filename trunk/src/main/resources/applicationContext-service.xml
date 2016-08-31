@@ -25,25 +25,7 @@
 
 	<!--自动扫描含有@Service将其注入为bean -->
 	<context:component-scan base-package="com.leweiyou.framework.valid,com.leweiyou.framework.service" />
-	
-	<!-- 缓存配置 -->
-	<!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) -->
-	<cache:annotation-driven cache-manager="cacheManager" />
-	
-	<!-- Spring自己的基于java.util.concurrent.ConcurrentHashMap实现的缓存管理器(该功能是从Spring3.1开始提供的) -->
-	<!-- <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager"> 
-	    <property name="caches"> <set> <bean name="myCache" class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"/> 
-	    </set> </property> </bean> -->
-	
-	<!-- 若只想使用Spring自身提供的缓存器,则注释掉下面的两个关于Ehcache配置的bean,并启用上面的SimpleCacheManager即可 -->
-	<!-- Spring提供的基于的Ehcache实现的缓存管理器 -->
-	<bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-	    <property name="configLocation" value="classpath:ehcache.xml" />
-	</bean>
-	<bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
-	    <property name="cacheManager" ref="cacheManagerFactory" />
-	</bean>
-	
+
 	<!-- 通过定义Bean获取ApplicationContext -->
 	<bean id="springContextUtil" class="com.leweiyou.framework.util.SpringContextUtil"/>
 	

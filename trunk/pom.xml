@@ -210,11 +210,13 @@
 	    </dependency> 
 
 		<!-- 添加echcache缓存 -->
+		<!-- 
 		<dependency>
 		    <groupId>net.sf.ehcache</groupId>
 		    <artifactId>ehcache-core</artifactId>
 		    <version>2.4.3</version>
 		</dependency>
+		 -->
 		
 		<!-- springmvc前台数据校验 -->
 		<dependency>
