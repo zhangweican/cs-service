@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.leweiyou.framework.entity.ValidErrorEntity;
 import com.leweiyou.framework.util.CXT;
 
@@ -45,7 +46,7 @@ public class ValidAspect {
 		int parmPosion = valid.parameterPosition();
 		
 		if(StringUtils.isEmpty(validFunction)){
-			validFunction = ValidPrix + method.getName();
+			validFunction = method.getName() + ValidPrix;
 			
 		}
 		
@@ -105,11 +106,19 @@ public class ValidAspect {
 			if(map.isHaveError()){
 				isError = true;
 			}
-			json += JSONArray.toJSONString(map.all());
+			json += JSONObject.toJSONString(map.all());
+			String msg = null;
 			if(StringUtils.isNotEmpty(json)){
-				return jsonReturnPatten.replaceAll("#MSG#", json);
+				msg = jsonReturnPatten.replaceAll("#MSG#", json);
 			}else{
-				return jsonReturnPatten.replaceAll("#MSG#", "{}");
+				msg = jsonReturnPatten.replaceAll("#MSG#", "{}");
+			}
+			if(returnClass.equals(JSONArray.class)){
+				return JSONArray.parse(msg);
+			}else if(returnClass.equals(JSONObject.class)){
+				return JSONObject.parse(msg);
+			}else {
+				return msg;
 			}
 		}else{
 			Object o = new Object();
