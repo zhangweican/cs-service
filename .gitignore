@@ -47,4 +47,4 @@ Temporary Items
 .apdisk
 
 trunk/target/*
-trunk/logs/*
+trunk/logs/*/trunk/
