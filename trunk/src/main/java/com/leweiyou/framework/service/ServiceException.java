@@ -14,16 +14,20 @@ public class ServiceException extends RuntimeException{
 	}
 	public ServiceException(Throwable e){
 		super(e);
+		this.code = -1;
+		this.msg = e.getMessage();
 	}
 	public ServiceException(int code){
 		this.code = code;
 		this.msg = "";
 	}
 	public ServiceException(int code,String msg){
+		super(msg);
 		this.code = code;
 		this.msg = msg;
 	}
 	public ServiceException(String msg){
+		super(msg);
 		this.code = -1;
 		this.msg = msg;
 	}
