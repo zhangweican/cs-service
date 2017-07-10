@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="namespace">
+	<!-- 获取单挑记录 -->
+	<select id="get" statementType="CALLABLE" resultType="map">
+           {call ${pName}(
+              <foreach collection="struts" item="strut"  separator=",">  
+            		${strut}  
+        	  </foreach> 
+           )}    
+    </select>
+	<!-- 检索 -->
+	<select id="list" statementType="CALLABLE" resultType="map">
+           {call ${pName}(
+              <foreach collection="struts" item="strut"  separator=",">  
+            		${strut}  
+        	  </foreach> 
+           )}    
+    </select>
+	<!-- 插入 -->
+	<insert id="insert" statementType="CALLABLE">
+           {call ${pName}(
+              <foreach collection="struts" item="strut"  separator=",">  
+            		${strut}  
+        	  </foreach> 
+           )}    
+    </insert>
+	<!-- 更新-->
+	<update id="update" statementType="CALLABLE">
+           {call ${pName}(
+              <foreach collection="struts" item="strut"  separator=",">  
+            		${strut}  
+        	  </foreach> 
+           )}    
+    </update>
+    <delete id="delete" statementType="CALLABLE">
+           {call ${pName}(
+              <foreach collection="struts" item="strut"  separator=",">  
+            		${strut}  
+        	  </foreach> 
+           )}    
+    </delete>
+ </mapper>
