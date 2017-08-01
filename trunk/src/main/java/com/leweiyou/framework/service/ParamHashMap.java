@@ -17,7 +17,7 @@ import com.leweiyou.tools.bean.BeanUtils;
  * 模板的映射文件参考-mapper.xml.templete
  * @author Zhangweican
  */
-public class ParamHashMap extends HashMap<String,Object> {
+public class ParamHashMap<K,V> extends HashMap<String,Object> {
 	protected  Logger logger = Logger.getLogger(this.getClass());
 	private List<String> struts = new ArrayList<String>();
 	//接收一个对象，或者 map ，当in 时候，直接 从这里获取数据，而不用再 重新设置
