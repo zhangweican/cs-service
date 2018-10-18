@@ -14,6 +14,8 @@ public class EnvPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigu
 
     public void init() {
         
+    	//加载log4j配置
+    	Log4jConfigurer.init();
         String path = EnvUtil.getEnvFilePath();
         Properties p = new Properties();
         try {
@@ -23,6 +25,7 @@ public class EnvPropertyPlaceholderConfigurer extends PropertyPlaceholderConfigu
 		}
         //关键方法,调用的PropertyPlaceholderConfigurer中的方法,通过这个方法将自定义加载的properties文件加入spring中
     	this.setProperties(p); 
+    	
     }
 
 }
