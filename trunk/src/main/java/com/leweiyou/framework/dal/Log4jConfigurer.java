@@ -32,8 +32,35 @@ public class Log4jConfigurer {
 		}
 		
 		//判定appcfg路径下是否存在log4j配置文件
-		String log4jPath = null;
 		String path = new File(EnvUtil.getEnvFilePath()).getParentFile().getPath();
+		String log4jPath = getLog4jConf(path);
+		
+		if(log4jPath != null){
+			try {
+				logger.info("load log4j from ：" + log4jPath);
+				org.springframework.util.Log4jConfigurer.initLogging(log4jPath, refreshInterval);
+			} catch (Exception e) {
+				logger.error("load log4j error ：" + log4jPath,e);
+			}
+		}else{
+			path = EnvUtil.class.getResource("/").getPath() + "../classes" + File.separator ;			
+			log4jPath = getLog4jConf(path);
+			if(log4jPath != null){
+				try {
+					logger.info("load log4j from ：" + log4jPath);
+					org.springframework.util.Log4jConfigurer.initLogging(log4jPath, refreshInterval);
+				} catch (Exception e) {
+					logger.error("load log4j error ：" + log4jPath,e);
+				}
+			}else{
+				logger.error("not found log4j config file");
+			}
+		}
+		
+		
+	}
+	private static String getLog4jConf(String path){
+		String log4jPath = null;
 		File f = new File(path,"log4j.properties");
 		if(!f.exists()){
 			f = new File(path,"log4j.xml");
@@ -46,14 +73,6 @@ public class Log4jConfigurer {
 		}else{
 			log4jPath = f.getAbsolutePath();
 		}
-		
-		if(log4jPath != null){
-			try {
-				logger.info("load log4j from ：" + log4jPath);
-				org.springframework.util.Log4jConfigurer.initLogging(log4jPath, refreshInterval);
-			} catch (Exception e) {
-				logger.error("load log4j error ：" + log4jPath,e);
-			}
-		}
+		return log4jPath;
 	}
 }
