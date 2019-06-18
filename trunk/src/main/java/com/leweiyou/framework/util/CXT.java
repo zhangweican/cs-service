@@ -3,11 +3,13 @@ package com.leweiyou.framework.util;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.leweiyou.framework.entity.ValidErrorEntity;
+import com.leweiyou.framework.service.ServiceException;
 
 /**
  * 环境变量的获取
@@ -57,8 +59,8 @@ public class CXT {
 	 * @param id
 	 * @return
 	 */
-	public static Object getBean(String id){
-		return getApplicationContext().getBean(id);
+	public static <T> T getBean(String id){
+		return (T) getApplicationContext().getBean(id);
 	}
 	
 	/**
@@ -66,7 +68,7 @@ public class CXT {
 	 * @param id
 	 * @return
 	 */
-	public static Object getBean(Class<?> clazz){
-		return getApplicationContext().getBean(clazz);
+	public static <T> T getBean(Class<?> clazz){
+		return (T) getApplicationContext().getBean(clazz);
 	}
 }
